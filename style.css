@@ -1,0 +1,121 @@
+html {
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#game_board{
+    width: 450px;
+    height: 455px;
+    margin: 0 auto;
+    padding: 10px;
+    background: black;
+    opacity: 0.4;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.row{
+    width: 100%;
+    height: 150px;
+}
+.col{
+    width: 32%;
+    height: 145.5px;
+    border: 5px solid white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 150px;
+    font-family: helvetica;
+    color: white;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.col:hover{
+    background-color: red;
+    opacity: 0.3;
+    border-radius: 5px;
+    color: black;
+}
+
+.col:hover:empty{
+    background-color: grey;
+    opacity: 0.3;
+}
+.matched{
+    color: maroon;
+}
+.player-1-color{
+    color: maroon;
+}
+.col:nth-child(1){
+    border-left: none;
+}
+.col:nth-child(3){
+    border-right: none;
+}
+
+.row:nth-child(1) .col{
+    border-top: none;
+    margin-top: 3px;
+}
+.row:nth-child(3) .col{
+    border-bottom: none;
+    margin-bottom: 3px;
+}
+
+#score_sheet{
+    width: 435px;
+    padding: 10px;
+    margin: 0 auto;
+    background: #2ecc71;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+#score{
+    font-size: 30px;
+    font-family: helvetica;
+    color: whitesmoke;
+    margin-top: 10px;
+    text-align: center;
+}
+#startButton {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 8.5px 17px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 13px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   text-align: center;
+   margin-left: 25%;
+   margin-right: auto;
+   width: 50%;
+
+   }
+#startButton:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+#startButton:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
