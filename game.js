@@ -1,9 +1,22 @@
 var count = 0;
+var player1wins = 0;
+var player2wins = 0;
+var tiecount = 0;
 $('.col').on('click', function() {
   if($(this).text() === ""){
     $(this).text(getPlayer(count));
     if (checkBoard()){
       alert(getPlayer(count) + " WINS ALL THE BOARDS");
+      if (getPlayer(count) === "X"){
+        player1wins = player1wins + 1;
+        $("#xscore").empty();
+        $("#xscore").append("X: " + player1wins);
+        console.log("player1wins");
+      } else {
+        player2wins = player2wins + 1;
+        $("#oscore").empty();
+        $("#oscore").append("O: " + player2wins);
+      }
       reset();
       count = 0;
     } else {
@@ -11,6 +24,9 @@ $('.col').on('click', function() {
     }
     if (count >= 9) {
       alert("the game is a tie!");
+      tiecount = tiecount + 1;
+      $("#tscore").empty();
+      $("#tscore").append("Ties: " + tiecount);
       count = 0;
       reset();
     }
