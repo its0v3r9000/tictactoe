@@ -2,6 +2,8 @@ var count = 0;
 var player1wins = 0;
 var player2wins = 0;
 var tiecount = 0;
+
+//Selecting our "boxes". Runs checkboard on each click, checks for win state, checks for tie, then counts/resets the board.
 $('.col').on('click', function() {
   if($(this).text() === ""){
     $(this).text(getPlayer(count));
@@ -33,19 +35,16 @@ $('.col').on('click', function() {
   }
 });
 
-
+//simple reset function using jquery. Sets the text in each col to blank.
 function reset() {
   $(".col").text("");
 };
 
+//the win state check. Set win to false and proceed to check the different win states.
 function checkBoard() {
   var win = false;
-  var s = [];
 
-  for(var i = 1; i <= 9; i++){
-    s.push($("#" + i).text());
-  }
-
+//we see if a square is NOT blank, and hten check to see if the connected squares are the same (in this case diagonal)
   if ($("#1").text() !== "" &&
     $("#5").text() === $("#1").text() &&
     $("#9").text() === $("#1").text()){
@@ -57,7 +56,9 @@ function checkBoard() {
     $("#7").text() === $("#3").text()){
       win = true;
     }
-
+//here we use some concatotations of strings to check each row and coloum in a loop, saving us from writing out each row/col.
+//we count three times, since there are three of each row/col. Then we start at one, and add the starting column and then * by the amount we want to move.
+// i starts at 0 so our first pass through is the first row. (i * 3 = 0)
   for (i = 0; i < 3; i++){
     if ($("#" + (1 + (i * 3))).text() !== "" &&
       $("#" + (2 + (i * 3))).text() === $("#" + (1 + (i * 3))).text() &&
@@ -73,6 +74,8 @@ function checkBoard() {
   return win;
 }
 
+//here is a function to check which turn it is. It was originally in the main part of the script to hard set the turn, but it was moved out because it allows
+//us to call it later to check whose turn it is. Useful for doing "who wins" strings/+ the win counter.
 function getPlayer(count){
   if (count % 2 === 0) {
       return "X";
