@@ -6,7 +6,10 @@ var tiecount = 0;
 //Selecting our "boxes". Runs checkboard on each click, checks for win state, checks for tie, then counts/resets the board.
 $('.col').on('click', function() {
   if($(this).text() === ""){
-    $(this).text(getPlayer(count));
+    $(this).css("fontSize", 60)
+    $(this).text(getPlayer(count)).animate({
+     fontSize : "140px"
+   }, 3000);
     if (checkBoard()){
       alert(getPlayer(count) + " WINS ALL THE BOARDS");
       if (getPlayer(count) === "X"){
