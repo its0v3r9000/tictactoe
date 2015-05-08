@@ -13,7 +13,6 @@ html {
     padding: 10px;
     background: black;
     opacity: 0.5;
-    margin-top: 50px;
     border-radius: 20px;
 }
 
@@ -75,6 +74,24 @@ html {
     background: #2c3e50;
     border-radius: 20px;
     opacity: 0.8;
+}
+#topbar{
+    width: 435px;
+    height: 30px;
+    padding: 10px;
+    margin: 0 auto;
+    background: #2c3e50;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.toptext{
+    font-size: 20px;
+    font-family: helvetica;
+    color: whitesmoke;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
 }
 .score{
     font-size: 30px;

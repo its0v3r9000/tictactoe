@@ -12,16 +12,19 @@ $('.col').on('click', function() {
      fontSize : "140px"
    }, 2000);
     if (checkBoard()){
-      alert(getPlayer(count) + " WINS ALL THE BOARDS");
+      //alert(getPlayer(count) + " WINS ALL THE BOARDS");
       if (getPlayer(count) === "X"){
         player1wins = player1wins + 1;
         $("#xscore").empty();
         $("#xscore").append("X: " + player1wins);
-        console.log("player1wins");
+        $("#whowon").empty();
+        $("#whowon").append("Player X won!")
       } else {
         player2wins = player2wins + 1;
         $("#oscore").empty();
         $("#oscore").append("O: " + player2wins);
+        $("#whowon").empty();
+        $("#whowon").append("Player O won!")
       }
       reset();
       count = 0;
@@ -29,10 +32,12 @@ $('.col').on('click', function() {
       count++;
     }
     if (count >= 9) {
-      alert("the game is a tie!");
+      //alert("the game is a tie!");
       tiecount = tiecount + 1;
       $("#tscore").empty();
       $("#tscore").append("Ties: " + tiecount);
+      $("#whowon").empty();
+      $("#whowon").append("The game was a tie")
       count = 0;
       reset();
     }
@@ -41,6 +46,8 @@ $('.col').on('click', function() {
 
 //simple reset function using jquery. Sets the text in each col to blank. Changes the background image.
 function reset() {
+  $('#game_board').hide("explode", {pieces: 16}, 500 );
+  $('#game_board').show("explode", {pieces: 16 }, 500 );
   $(".col").text("");
   $('html').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
 };
