@@ -38,9 +38,11 @@ $('.col').on('click', function() {
   }
 });
 
-//simple reset function using jquery. Sets the text in each col to blank.
+//simple reset function using jquery. Sets the text in each col to blank. Changes the background image.
 function reset() {
   $(".col").text("");
+  var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg', 'bg6.jpg'];
+  $('html').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
 };
 
 //the win state check. Set win to false and proceed to check the different win states.
@@ -86,3 +88,16 @@ function getPlayer(count){
       return "O";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

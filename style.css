@@ -1,5 +1,5 @@
 html {
-  background: url(images/bg.jpg) no-repeat center center fixed;
+  background: url(images/bg2.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,7 +12,7 @@ html {
     margin: 0 auto;
     padding: 10px;
     background: black;
-    opacity: 0.4;
+    opacity: 0.5;
     margin-top: 50px;
     border-radius: 20px;
 }
