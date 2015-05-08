@@ -2,6 +2,7 @@ var count = 0;
 var player1wins = 0;
 var player2wins = 0;
 var tiecount = 0;
+var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg', 'bg6.jpg'];
 
 //Selecting our "boxes". Runs checkboard on each click, checks for win state, checks for tie, then counts/resets the board.
 $('.col').on('click', function() {
@@ -9,7 +10,7 @@ $('.col').on('click', function() {
     $(this).css("fontSize", 60)
     $(this).text(getPlayer(count)).animate({
      fontSize : "140px"
-   }, 3000);
+   }, 2000);
     if (checkBoard()){
       alert(getPlayer(count) + " WINS ALL THE BOARDS");
       if (getPlayer(count) === "X"){
@@ -41,7 +42,6 @@ $('.col').on('click', function() {
 //simple reset function using jquery. Sets the text in each col to blank. Changes the background image.
 function reset() {
   $(".col").text("");
-  var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg', 'bg6.jpg'];
   $('html').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
 };
 
